@@ -10,8 +10,8 @@ const App = () => {
 const OptimizeTheOperation = ({ onClick }) => {
   const [number, setNumber] = useState(10000);
 
-  const prime = primeNumber(number);
-
+  const prime = useMemo(primeNumber,[number])
+  //prime.forEach(p => console.log(p));
   const submitHandler = (event) => {
     event.preventDefault();
     setNumber(Number(event.target.num.value));
